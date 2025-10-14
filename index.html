@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Comments - XSS Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blog Post</h1>
+            <p class="author">Posted by Admin on October 14, 2025</p>
+        </header>
+        
+        <main>
+            <article>
+                <h2>Understanding Web Security</h2>
+                <p>This is a demo blog post about web security. The comment section below contains a vulnerability for educational purposes.</p>
+                <p>In a real application, you should always sanitize user input to prevent XSS attacks.</p>
+            </article>
+            
+            <section class="comments-section">
+                <h3>Comments</h3>
+                <div id="comments-container">
+                    <!-- Comments will be displayed here -->
+                    <div id="loading-comments">Loading comments...</div>
+                </div>
+                
+                <div class="comment-form">
+                    <h4>Add a Comment</h4>
+                    <form id="comment-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea id="comment" name="comment" rows="4" required></textarea>
+                        </div>
+                        <button type="submit">Submit Comment</button>
+                    </form>
+                </div>
+                
+                <div class="admin-section" style="display: none;">
+                    <h4>Administrator Actions</h4>
+                    <button id="fetch-users-btn">Fetch Users</button>
+                    <div id="users-container" style="display: none;"></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>This is a demonstration of XSS vulnerabilities. For educational purposes only.</p>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
